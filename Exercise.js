@@ -58,43 +58,43 @@ const checkoutProduct = async () => {
 
 checkoutProduct();
 
-const buyProduct = (product) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const store = {
-        isOpen: true,
-        products: ["iPhone", "Samsung", "Google Pixel"],
-        versions: ["14 Pro Max", "13 Pro Max", "12 Pro Max"],
-        colors: ["Deep Purple", "Midnight Blue", "Silver", "Gold"],
-      };
+// const buyProduct = (product) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const store = {
+//         isOpen: true,
+//         products: ["iPhone", "Samsung", "Google Pixel"],
+//         versions: ["14 Pro Max", "13 Pro Max", "12 Pro Max"],
+//         colors: ["Deep Purple", "Midnight Blue", "Silver", "Gold"],
+//       };
 
-      if (!store.isOpen) {
-        reject(new Error("The store is closed"));
-      } else {
-        const productAvailable = store.products.includes(product.name);
+//       if (!store.isOpen) {
+//         reject(new Error("The store is closed"));
+//       } else {
+//         const productAvailable = store.products.includes(product.name);
 
-        if (!productAvailable) {
-          reject(new Error(`${product.name} is not available`));
-        } else {
-          const versionAvailable = store.versions.includes(product.version);
+//         if (!productAvailable) {
+//           reject(new Error(`${product.name} is not available`));
+//         } else {
+//           const versionAvailable = store.versions.includes(product.version);
 
-          if (!versionAvailable) {
-            reject(new Error(`${product.version} is not available`));
-          } else {
-            const colorAvailable = store.colors.includes(product.color);
+//           if (!versionAvailable) {
+//             reject(new Error(`${product.version} is not available`));
+//           } else {
+//             const colorAvailable = store.colors.includes(product.color);
 
-            if (!colorAvailable) {
-              reject(new Error(`${product.color} is not available`));
-            } else {
-              resolve({
-                orderId: Date.now(),
-                ...product,
-                status: "Purchase successful",
-              });
-            }
-          }
-        }
-      }
-    }, 2000);
-  });
-};
+//             if (!colorAvailable) {
+//               reject(new Error(`${product.color} is not available`));
+//             } else {
+//               resolve({
+//                 orderId: Date.now(),
+//                 ...product,
+//                 status: "Purchase successful",
+//               });
+//             }
+//           }
+//         }
+//       }
+//     }, 2000);
+//   });
+// };
