@@ -55,4 +55,3 @@ const checkout = async () => {
 };
 
 checkout();
-
