@@ -3,11 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impact Class Practice</title>
+    <title>Login Dashboard</title>
   </head>
   <body>
     <h1>Page Created</h1>
-    <!-- <script src="./script.js"></script> -->
+
+    <!-- Login form -->
+    <section id="loginSection">
+      <!-- login -->
+
+      <h1>LOGIN FORM</h1>
+
+      <form>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter username"
+        />
+
+        <button type="submit">Login</button>
+      </form>
+      <p id="message"></p>
+    </section>
+    <hr />
+    <!-- dashboard section -->
+
+    <section id="dashboard" hidden>
+      <h1>Dashboard Section</h1>
+
+      <h2 id="welcome"></h2>
+
+      <button id="logoutBtn">Logout</button>
+
+      <div id="productContainer">----</div>
+    </section>
+
+    <script src="./app.js"></script>
     <script src="./stella.js"></script>
     <script src="./Exercise.js"></script>
   </body>
