@@ -22,13 +22,51 @@ const getProducts = async () => {
     data.products.forEach((product) => {
       const productCard = document.createElement("div");
 
+      productCard.classList.add("product-card");
+
       productCard.innerHTML = `
-      <h3>${product.title}</h3>
+        <div class="product-image">
+          <img 
+            src="${product.thumbnail}" 
+            alt="${product.title}" 
+          />
+        </div>
 
-    <img src="${product.thumbnail}" width="120" alt="${product.title}" />
-    <p>${product.description}</p>
+        <div class="product-info">
+          <span class="product-category">
+            ${product.category}
+          </span>
 
-        <p>$${product.price}</p>
+          <h3>${product.title}</h3>
+
+          <p class="product-description">
+            ${product.description}
+          </p>
+
+          <h2 class="product-price">
+            $${product.price}
+          </h2>
+
+          <div class="product-details">
+            <p>
+              <strong>Brand:</strong> ${product.brand}
+            </p>
+
+            <p>
+              <strong>Availability:</strong> 
+              ${product.availabilityStatus}
+            </p>
+
+            <p>
+              <strong>Return Policy:</strong> 
+              ${product.returnPolicy}
+            </p>
+          </div>
+
+          <button class="product-btn">
+            View Product
+          </button>
+        </div>
       `;
 
       productContainer.appendChild(productCard);

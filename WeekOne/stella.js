@@ -10,7 +10,7 @@ const placeOrder = (order) => {
     setTimeout(() => {
       const restaurant = {
         isOpen: true,
-        availableItems: ["Jollof Rice", "Fried Rice"],
+        availableItems: ["meat", "Fried Rice"],
       };
 
       if (!restaurant.isOpen) {
@@ -34,36 +34,30 @@ const placeOrder = (order) => {
   });
 };
 
-// middleware
-// placeOrder(order)
-//   .then((confirmedOrder) => {
-//     console.log("Confirmed", confirmedOrder);
-//   })
-//   .catch((error) => {
-//     console.error("Failed", error.message);
-//   });
-
-// Checkout - {}
 // const checkout = async () => {
 //   try {
 //     const confirmedOrder = await placeOrder(order);
-//     console.log(`Confirmed ${confirmedOrder.id} order`);
-//     // console.log(confirmedOrder, `confirmed`);
+
+//     console.log("Confirmed", confirmedOrder);
 //   } catch (error) {
-//     console.error(error.message);
+//     console.error("Failed", error.message);
 //   }
 // };
 
 // checkout();
 
 const checkout = async () => {
-  try {
-    const confirmedOrder = await placeOrder(order);
+  const confirmedOrder = await placeOrder(order).catch((err) => {
+    console.error(err.message);
+    return null; // prevent the function from crashing || herehrhehrherherh
+  });
 
-    console.log("Confirmed", confirmedOrder);
-  } catch (error) {
-    console.error("Failed", error.message);
-  }
+  if (!confirmedOrder) return;
+
+  console.log(confirmedOrder);
 };
 
 checkout();
+
+
+// new changes
