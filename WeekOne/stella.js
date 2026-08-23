@@ -49,7 +49,7 @@ const placeOrder = (order) => {
 const checkout = async () => {
   const confirmedOrder = await placeOrder(order).catch((err) => {
     console.error(err.message);
-    return null; // prevent the function from crashing
+    return null; // prevent the function from crashing || herehrhehrherherh
   });
 
   if (!confirmedOrder) return;
